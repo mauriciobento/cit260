@@ -6,13 +6,29 @@ import java.util.Date;
 
 public class FileData {
 
-    private Bank bank;
+    public static Bank bank;
 
     private final String FILE_NAME = "bank";
 
+    /**
+     *
+     * @param bank
+     */
     public void saveFile(Bank bank){
+        File file = new File(FILE_NAME);
         FileOutputStream fos = null;
+        writeFile();
+    }
 
+    private void createFile(Bank bank){
+        File file = new File(FILE_NAME);
+        if(!file.exists()){
+            writeFile();
+        }
+    }
+
+    private void writeFile(){
+        FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(FILE_NAME);
             ObjectOutputStream o = new ObjectOutputStream(fos);
@@ -24,8 +40,11 @@ public class FileData {
         }
     }
 
+    /**
+     *
+     */
     public void loadFile(){
-        saveFile(new Bank());
+        createFile(new Bank());
         try {
             FileInputStream fi = new FileInputStream(new File(FILE_NAME));
             ObjectInputStream oi = new ObjectInputStream(fi);
