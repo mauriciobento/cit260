@@ -12,11 +12,8 @@ public class FileData {
 
     /**
      *
-     * @param bank
      */
-    public void saveFile(Bank bank){
-        File file = new File(FILE_NAME);
-        FileOutputStream fos = null;
+    public void saveFile(){
         writeFile();
     }
 

@@ -21,7 +21,7 @@ public class PersonServiceImpl implements PersonService {
     public void savePerson(Person person) throws PersonException {
         Bank bank = FileData.bank;
         bank.getPersonList().add(person);
-        fileData.saveFile(bank);
+        fileData.saveFile();
     }
 
     /**
