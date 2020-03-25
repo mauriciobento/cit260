@@ -10,6 +10,10 @@ public class FileData {
 
     private final String FILE_NAME = "bank";
 
+    static {
+        bank = new Bank();
+    }
+
     /**
      *
      */
@@ -17,7 +21,7 @@ public class FileData {
         writeFile();
     }
 
-    private void createFile(Bank bank){
+    private void createFile(){
         File file = new File(FILE_NAME);
         if(!file.exists()){
             writeFile();
@@ -41,7 +45,7 @@ public class FileData {
      *
      */
     public void loadFile(){
-        createFile(new Bank());
+        createFile();
         try {
             FileInputStream fi = new FileInputStream(new File(FILE_NAME));
             ObjectInputStream oi = new ObjectInputStream(fi);
@@ -58,15 +62,4 @@ public class FileData {
         }
     }
 
-    public void updateFile(){
-
-    }
-
-    public Bank getBank() {
-        return bank;
-    }
-
-    public void setBank(Bank bank) {
-        this.bank = bank;
-    }
 }
