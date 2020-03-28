@@ -106,6 +106,18 @@ public class MainPage {
         }
     }
 
+    private void accountMenu(){}
+
+    private void createAccount(){}
+
+    private void showAccount(){}
+
+    private void transactionMenu(){}
+
+    private void transactionWithdraw(){}
+
+    private void transactionTransfer(){}
+
     /**
      * @param message
      * @return

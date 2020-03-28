@@ -1,7 +1,7 @@
 import data.FileData;
 import view.MainPage;
 
-public class InitApp {
+public class InitApp extends MainPage {
 
     // Class will load the data file
     private FileData data;
