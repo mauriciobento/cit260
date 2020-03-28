@@ -19,9 +19,13 @@ public class PersonServiceImpl implements PersonService {
      */
     @Override
     public void savePerson(Person person) throws PersonException {
-        Bank bank = FileData.bank;
-        bank.getPersonList().add(person);
-        fileData.saveFile();
+        try{
+            Bank bank = FileData.bank;
+            bank.getPersonList().add(person);
+            fileData.saveFile();
+        }catch (Exception e){
+            throw new PersonException(e.getMessage());
+        }
     }
 
     /**
